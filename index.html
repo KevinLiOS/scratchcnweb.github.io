@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scratch中国社区</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 按钮样式 */
+        #fullscreen-btn {
+            padding: 15px 30px; /* 增加内边距 */
+            font-size: 20px; /* 增加字体大小 */
+            width: 250px; /* 增加按钮宽度 */
+            height: 60px; /* 增加按钮高度 */
+            background-color: #007BFF; /* 更鲜艳的背景色 */
+            color: white; /* 白色文字 */
+            border: none; /* 无边框 */
+            border-radius: 10px; /* 圆角边框 */
+            cursor: pointer; /* 鼠标悬停时显示手型指针 */
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* 添加阴影效果 */
+            transition: background-color 0.3s, box-shadow 0.3s; /* 平滑过渡效果 */
+            display: block; /* 块级元素，自动居中 */
+            margin: 20px auto; /* 上下外边距，水平居中 */
+        }
+        #fullscreen-btn:hover {
+            background-color: #0056b3; /* 按钮悬停时的背景色变暗 */
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5); /* 悬停时阴影效果增强 */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,8 +34,8 @@
         <nav>
             <ul>
                 <li><a href="#home">首页</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#forum">论坛</a></li>
+                <li><a href="#create">创作</a></li>
+                <li><a href="#explore">探索</a></li>
                 <li><a href="#about">关于我们</a></li>
             </ul>
         </nav>
@@ -25,14 +47,17 @@
             <p>这里是Scratch中国社区的首页，欢迎加入我们！</p>
         </section>
 
-        <section id="projects">
-            <h2>项目</h2>
-            <p>探索和分享Scratch项目。</p>
+        <section id="create">
+            <h2>创作</h2>
+            <!-- 嵌入Scratch编辑器的iframe代码 -->
+            <iframe id="scratch-editor" src="https://scratch3.cocoet.cn/" style="width: 100%; height: 90vh;" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <!-- 全屏按钮 -->
+            <button id="fullscreen-btn">全屏创作</button>
         </section>
 
-        <section id="forum">
-            <h2>论坛</h2>
-            <p>加入讨论，分享你的创意和问题。</p>
+        <section id="explore">
+            <h2>探索</h2>
+            <p>浏览和分享Scratch项目。</p>
         </section>
 
         <section id="about">
@@ -44,5 +69,23 @@
     <footer>
         <p>&copy; 2024 Scratch中国社区。保留所有权利。</p>
     </footer>
+
+    <!-- JavaScript代码用于全屏功能 -->
+    <script>
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            var iframe = document.getElementById('scratch-editor');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari 和 Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            } else {
+                alert('全屏功能不受支持。');
+            }
+        });
+    </script>
 </body>
 </html>
