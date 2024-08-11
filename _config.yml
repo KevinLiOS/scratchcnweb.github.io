@@ -1,0 +1,63 @@
+# _config.yml文件示例
+
+# 站点的基本信息
+name: 您的网站名称
+description: 您的网站描述
+
+# 站点的URL和根URL，如果您使用自定义域名，请替换下面的URL
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# 如果您的网站部署在项目的docs目录下，请取消下面一行的注释
+# baseurl: "/docs"
+
+# 站点的语言和字符编码
+lang: zh-cn
+encoding: utf-8
+
+# 站点的Jekyll主题
+theme: jekyll-theme-minimal # 您可以更改为您选择的主题
+
+# 插件列表
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# 站点的源文件和目标部署目录
+source: .
+destination: ./_site
+
+# 排除不参与构建的文件和目录
+exclude:
+  - .gitignore
+  - .gitattributes
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - bin/
+
+# 包括参与构建的文件和目录
+include:
+  - .htaccess
+  - index.html
+  - styles.css
+
+# 作者信息
+author:
+  name: 您的名字
+  email: 您的电子邮件地址
+  github: 您的GitHub用户名
+
+# 版权信息
+copyright: "&copy; 2024 您的版权信息"
+
+# 如果使用GitHub Pages的自定义域，请取消下面一行的注释并替换为您的域名
+# url: "https://your-custom-domain.com"
+
+# 如果禁用站点的增量构建，请取消下面一行的注释
+# incremental: false
